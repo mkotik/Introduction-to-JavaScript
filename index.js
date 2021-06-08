@@ -147,25 +147,27 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+// Randomly generating a "computer" argument. If this code is included inside the function, it would overwrite the argument given by the test, and thereby fail the test. So I'm not sure what exactly you want me to do with it.
+const options = ["rock", "paper", "scissors"];
+let computer = options[Math.floor(Math.random() * 3)];
 
 function game(user, computer) {
   if (user === computer) {
     return "it's a tie";
-  } else if (user === "Scissors" && computer === "Paper") {
+  } else if (user === "scissors" && computer === "paper") {
     return "you win!";
-  } else if (user === "Scissors" && computer === "Rock") {
+  } else if (user === "scissors" && computer === "rock") {
     return "you lose!";
-  } else if (user === "Paper" && computer === "Rock") {
+  } else if (user === "paper" && computer === "rock") {
     return "you win!";
-  } else if (user === "Paper" && computer === "Scissors") {
+  } else if (user === "paper" && computer === "scissors") {
     return "you lose!";
-  } else if (user === "Rock" && computer === "Paper") {
+  } else if (user === "rock" && computer === "paper") {
     return "you lose!";
-  } else if (user === "Rock" && computer === "Scissors") {
+  } else if (user === "rock" && computer === "scissors") {
     return "you win!";
   }
 }
-
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 //Metric Converter
@@ -229,13 +231,13 @@ Using the grade function below do the following:
 function grade(score) {
   if (score >= 90 && score <= 100) {
     return "you got an A";
-  } else if (score >= 90 && score <= 100) {
-    return "you got a B";
   } else if (score >= 80 && score <= 89) {
-    return "you got a C";
+    return "you got a B";
   } else if (score >= 70 && score <= 79) {
-    return "you got a D";
+    return "you got a C";
   } else if (score >= 60 && score <= 69) {
+    return "you got a D";
+  } else if (score < 60) {
     return "you got an F";
   }
 }
@@ -252,10 +254,15 @@ Using the vowelCounter function below do the following:
   HINT - try looking up the .includes() method
 */
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function vowelCounter(str) {
+  const vowels = ["a", "e", "i", "o", "u"];
+  let counter = 0;
+  str
+    .toLowerCase()
+    .split("")
+    .forEach((cur) => (vowels.includes(cur) ? counter++ : ""));
+  return counter;
 }
-
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
 function foo() {
   //console.log('its working');
